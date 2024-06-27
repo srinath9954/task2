@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #e8e8e8;
+    padding: 40px;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h4 {
+    font-family: 'Instagram', cursive;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    font-size: 14px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.options a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    margin-top: 20px;
+}
+
+.signup a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+    <script>
+        function validateForm(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (username === "" || password === "") {
+        alert("Username and password are required.");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+}
+
+    </script>
+
+</head>
+<body>
+    <div class="login-container">
+        <i><h4>Instagram</h4></i>
+        <form id="loginForm" onsubmit="validateForm(event)">
+            <div class="input-group">
+                <label for="username">
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="password">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </label>
+            </div>
+            <button type="submit">Log in</button>
+            <div class="options">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+        <div class="signup">
+            <p>Don't have an account? <a href="#">Sign up here.</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>

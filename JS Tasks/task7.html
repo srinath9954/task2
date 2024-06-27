@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train Animation Control</title>
+<style>
+  .train {
+    width: 200px;
+    position: relative;
+    animation: travel 6s linear infinite;
+  }
+  
+  @keyframes travel {
+    0% { left: -200px; }
+    100% { left: 100%; }
+  }
+  
+  .controls {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .controls button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  function startTrain() {
+    document.getElementById("train").style.animationPlayState = "running";
+  }
+
+  function stopTrain() {
+    document.getElementById("train").style.animationPlayState = "paused";
+  }
+</script>
+</head>
+<body>
+  <h2>Control the train animation with the buttons below:</h2>
+  
+  <img src="train.png" alt="Train" class="train" id="train">
+  
+  <div class="controls">
+    <button onclick="startTrain()">Start</button>
+    <button onclick="stopTrain()">Stop</button>
+  </div>
+</body>
+</html>

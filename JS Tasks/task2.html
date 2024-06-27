@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <h1>Sort Letters in a Word</h1>
+        <input type="text" id="wordInput" placeholder="Enter a word">
+        <button onclick="sortLetters()">Sort</button>
+        <p id="sortedWord"></p>
+    </div>
+
+    <script>
+        function sortLetters() {
+            let inputWord = document.getElementById("wordInput").value;
+            let charArray = inputWord.split('');
+            charArray.sort();
+            let sortedWord = charArray.join('');
+            document.getElementById("sortedWord").textContent = "Sorted word: " + sortedWord;
+        }
+    </script>
+</body>
+</html>

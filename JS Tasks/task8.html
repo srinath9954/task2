@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JsTask-8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        span { color: rgb(219, 15, 15);
+           font-weight: bold;
+           }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>JS TASK 8</h1>
+        <div class="" style="background-image: linear-gradient(rgb(219, 100, 120), rgb(236, 236, 157)); border: 2px solid pink; width: 70%; margin-left: 200px;">
+            <center>
+                <h1 style="color: blue">Registration form</h1>
+                <form>
+                    <table cellpadding="4" cellspacing="0">
+                        <tr>
+                            <td class="right">First Name</td>
+                            <td><input type="text" name="fname" style="width: 100%" id="firstName"></td>
+                            <td><span id="firstNameError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Last Name</td>
+                            <td><input type="text" style="width: 100%" name="lname" id="lastName"></td>
+                            <td><span id="lastNameError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Email</td>
+                            <td><input type="text" style="width: 100%" name="email" id="email"></td>
+                            <td><span id="emailError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Password</td>
+                            <td><input type="password" style="width: 100%" name="pwd" id="password"></td>
+                            <td><span id="passwordError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Re-enter password</td>
+                            <td><input type="password" style="width: 100%" name="rpwd" id="rePassword"></td>
+                            <td><span id="rePasswordError"></span></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="right">Gender</td>
+                            <td>
+                                <input type="radio" id="genderMale" value="male" name="gen">
+                                <label for="genderMale">Male</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" id="genderFemale" value="female" name="gen">
+                                <label for="genderFemale">Female</label><br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Age</td>
+                            <td><input type="text" style="width: 100%" name="age" id="age"></td>
+                            <td><span id="ageError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Phone number</td>
+                            <td><input type="text" style="width: 100%" name="mob" id="phoneNumber"></td>
+                            <td><span id="phoneNumberError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Address</td>
+                            <td><textarea id="address" name="add" cols="60" rows="7"></textarea></td>
+                            <td><span id="addressError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">State</td>
+                            <td><input type="text" style="width: 100%" name="state" id="state"></td>
+                            <td><span id="stateError"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Country</td>
+                            <td>
+                                <select name="se" id="country">
+                                    <option value="choose your country">Choose your country</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Languages known</td>
+                            <td>
+                                <input type="checkbox" name="lang" value="english" id="languageEnglish">
+                                <label for="languageEnglish">English</label>
+                                <input type="checkbox" name="lang" value="Kannada" id="languageKannada">
+                                <label for="languageKannada">Kannada</label>
+                                <input type="checkbox" name="lang" value="Hindi" id="languageHindi">
+                                <label for="languageHindi">Hindi</label>
+                                <input type="checkbox" name="lang" value="Telugu" id="languageTelugu">
+                                <label for="languageTelugu">Telugu</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="checkbox" checked="checked" id="declaration">
+                                <label for="declaration">Here I declare all the given details are true</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p style="text-align: right">Log in to <a href="#" id="loginLink">Ethnus</a> website</p></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="REGISTER" style="border-radius: 10px; width: 80px" class="bg-danger text-white">
+                </form>
+            </center>
+        </div>
+        <h1 id="tempMessage"></h1>
+    </center>
+    <script>
+        setInterval(() => {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let rePassword = document.getElementById("rePassword").value;
+            let age = document.getElementById("age").value;
+            let phoneNumber = document.getElementById("phoneNumber").value;
+            let address = document.getElementById("address").value;
+            let state = document.getElementById("state").value;
+
+            document.getElementById("firstNameError").innerHTML = firstName === "" ? "Poor" : "";
+            document.getElementById("lastNameError").innerHTML = lastName === "" ? "Poor" : "";
+            document.getElementById("emailError").innerHTML = email === "" ? "Poor" : "";
+            document.getElementById("passwordError").innerHTML = password === "" ? "Poor" : "";
+            document.getElementById("rePasswordError").innerHTML = rePassword === "" || rePassword !== password ? "Poor or mismatch" : "";
+            document.getElementById("ageError").innerHTML = age === "" ? "Poor" : "";
+            document.getElementById("phoneNumberError").innerHTML = phoneNumber === "" ? "Poor" : "";
+            document.getElementById("addressError").innerHTML = address === "" ? "Poor" : "";
+            document.getElementById("stateError").innerHTML = state === "" ? "Poor" : "";
+        }, 10);
+    </script>
+</body>
+</html>

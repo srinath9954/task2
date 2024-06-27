@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="showDate()">show date</button>
+        <p id="dateDisplay"></p>
+        
+        <button onclick="showTime()">show Time</button>
+        <p id="timeDisplay"></p>
+    </div>
+
+    <script>
+        function showDate() {
+            const currentDate = new Date();
+            const date = currentDate.getDate();
+            const month = currentDate.toLocaleString('default', { month: 'long' });
+            const year = currentDate.getFullYear();
+            document.getElementById("dateDisplay").textContent =date+'/'+month+'/'+year;
+        }
+    
+        function showTime() {
+            const currentTime = new Date();
+            document.getElementById("timeDisplay").textContent = currentTime.toString();
+        }
+    </script>
+</body>
+</html>
